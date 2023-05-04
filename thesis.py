@@ -85,8 +85,8 @@ def trainer(params):
   criterion = nn.MSELoss()
   optimizer = optim.Adam(model.parameters(), lr= params['lr'])
 
-  dagshub.init("abc", "sidrameshwa", mlflow=True)
-  with mlflow.start_run(run_name=f"{params['lr']}_{params['batch_size']}_{params['epochs']}_{params['window_size']}") as run:  
+  dagshub.init("thesis", "sidrameshwar", mlflow=True)
+  with mlflow.start_run() as run:  
     for key, value in params.items():
         mlflow.log_param(key, value)
 
