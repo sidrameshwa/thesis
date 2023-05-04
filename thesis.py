@@ -141,5 +141,5 @@ if __name__ == '__main__':
     parser.add_argument("--model", type=str, default='transformer', help='different models')
 
     args = parser.parse_args()
-    params = {'lr' : args.lr, 'batch_size': args.batch_size, 'epochs':args.epochs, 'window_size':args.window_size, 'model': args.window_size}
+    params = {'lr' : args.lr, 'batch_size': args.batch_size, 'epochs':args.epochs, 'window_size':args.window_size, 'model': args.model}
     trainer(params)
