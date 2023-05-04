@@ -17,7 +17,7 @@ from models import *
 import dagshub
 
 # Reading csv file 
-data = pd.read_csv('Data/Data-set.csv')
+data = pd.read_csv('data/Data-set.csv')
 
 #converting to list
 data = data.value.values
