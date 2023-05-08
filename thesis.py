@@ -78,7 +78,7 @@ def trainer(params):
   elif params["model"] == "rnn":
     model = RNN(input_size = params['window_size']).double()
   elif params["model"] == "lstm":
-    model = MyLSTM(input_size = params['window_size']).double()s
+    model = MyLSTM(input_size = params['window_size']).double()
   else:
     model = RegressionModel(input_size = params['window_size']).double()
 
