@@ -72,15 +72,15 @@ def trainer(params):
   test_loader = DataLoader(test_dataset, batch_size = params['batch_size'], shuffle=True)
 
   if params["model"] =="resnet":
-    model = ResLSTM().double()
+    model = ResLSTM(input_size = params['window_size']).double()
   elif params["model"] == "transformer":
-    model = TransformerModel().double()
+    model = TransformerModel(input_dim= params['window_size']).double()
   elif params["model"] == "rnn":
-    model = RNN().double()
+    model = RNN(input_size = params['window_size']).double()
   elif params["model"] == "lstm":
-    model = MyLSTM().double()
+    model = MyLSTM(input_size = params['window_size']).double()s
   else:
-    model = RegressionModel().double()
+    model = RegressionModel(input_size = params['window_size']).double()
 
   criterion = nn.MSELoss()
   optimizer = optim.Adam(model.parameters(), lr= params['lr'])
